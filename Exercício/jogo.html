@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+</head>
+<body>
+
+    <script>
+        alert("Bem-vindo ao Hard Game");
+        
+        let game = prompt("Escolha a dificuldade do jogo (Fácil, Médio, Difícil e Dark Souls):");
+        let dificuldade = alert("Sua pontuação inicial é de 100");
+        let concluir = prompt("Digite Concluir para completar a dificuldade")
+        let difi;
+    
+        switch(game){
+            case "Fácil":
+                difi = dificuldade + parseInt(alert("Sua pontutação é de: "));
+            break;
+    
+            case "Médio":
+                difi = (dificuldade * 2) + parseInt(alert("Sua pontutação é de: "));
+            break;
+    
+            case "Difícil":
+                difi = (dificuldade * 3) + parseInt(alert("Sua pontutação é de: "));
+            break;
+    
+            case "Dark Souls":
+                difi = (dificuldade * 4) + parseInt(alert("Sua pontutação é de: "));
+            break;
+    
+            default:
+                alert("Dificuldade inexistente");
+            break;
+        }   
+        
+        difi("Sua pontuação é de: " + difi)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+
+    <script>
+
+        let adivinha = Math.floor(Math.random() * 100) + 1;
+        let palpite;
+        let tentativas = 0;
+
+        do {
+            palpite = prompt("Digite um número aleatório entre 1 e 100: ");
+            tentativas++;
+            if(palpite == adivinha) {
+                alert("Parabéns!! você acertou o número em " + tentativas + " tentativas!");
+            } else if (palpite < adivinha) {
+                alert("O número é maior, tente novamente.")
+            } else {
+                alert("O número é menor, tente novamente.")
+            }
+        } while (palpite != adivinha);
+
+    </script>
+    
+</body>
+</html>
