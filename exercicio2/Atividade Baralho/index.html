@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baralho</title>
+</head>
+<body>
+
+    <script>
+        function montarBaralho() {
+        const naipes = ["Paus", "Ouros", "Espadas", "Copas"];
+        const valores = ["Ás", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Rainha", "Rei"];
+        const cartas = [];
+
+        for(const naipe of naipes){
+        for(const valor of valores){
+        cartas.push({naipe, valor});
+    }
+  }
+
+  return cartas;
+}
+        function embaralharCartas(cartas) {
+        for(let i = cartas.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [cartas[i], cartas[j]] = [cartas[j], cartas[i]];
+  }
+        return cartas;
+}
+
+        const baralho = montarBaralho();
+        embaralharCartas(baralho);
+
+        const cartaAleatoria = baralho[Math.floor(Math.random() * baralho.length)];
+        console.log(cartaAleatoria);
+
+
+    </script>
+    
+</body>
+</html>

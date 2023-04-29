@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="selecao.css">
+    <title>Avaliação de Filmes</title>
+</head>
+
+<body>
+
+    <h1 id="titulo">Avaliação de Filmes</h1>
+
+    <h2 id="subtitulo">Escolha um filme:</h2>
+
+    <div class="central">
+        <div class="centralup">
+            <div class="filme1">
+                <img src="./filmes/viagem.jpg">
+                <div class="titulo">
+                    <h3>A Viagem de Chihiro</h3>
+                </div>
+                <div class="nota">
+                    <form id="avaliar">
+                        <label>Avalie o filme (0-10): <input type="number" id="nota" min="1" max="10"></label>
+                        <button type="button" id="botao" required>Enviar</button>
+                    </form>
+                    <br>
+                    <form>
+                        <button type="button" id="mediaBotao">Clique aqui para saber a média das
+                            notas</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="filme2">
+                <img src="./filmes/ceu.jpg">
+                <div class="titulo">
+                    <h3>O Castelo no Céu</h3>
+                </div>
+                <div class="nota">
+                    <form id="avaliar2">
+                        <label>Avalie o filme (0-10): <input type="number" id="nota2" min="1" max="10"></label>
+                        <button type="button" id="botao2" required>Enviar</button>
+                    </form>
+                    <br>
+                    <form>
+                        <button type="button" id="mediaBotao2">Clique aqui para saber a média das notas</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="filme3">
+                <img src="./filmes/kiki.jpg">
+                <div class="titulo">
+                    <h3>O Serviço de Entregas da Kiki</h3>
+                </div>
+                <div class="nota">
+                    <form id="avaliar3">
+                        <label>Avalie o filme (0-10): <input type="number" id="nota3" min="1" max="10"></label>
+                        <button type="button" id="botao3" required>Enviar</button>
+                    </form>
+                    <br>
+                    <form>
+                        <button type="button" id="mediaBotao3">Clique aqui para saber a média das notas</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="centraldown">
+            <div class="filme4">
+                <img src="./filmes/totoro.jpeg">
+                <div class="titulo">
+                    <h3>Meu Amigo Totoro</h3>
+                </div>
+                <div class="nota">
+                    <form id="avaliar4">
+                        <label>Avalie o filme (0-10): <input type="number" id="nota4" min="1" max="10"></label>
+                        <button type="button" id="botao4" required>Enviar</button>
+                    </form>
+                    <br>
+                    <form>
+                        <button type="button" id="mediaBotao4">Clique aqui para saber a média das notas</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="filme5">
+                <img src="./filmes/vento.webp">
+                <div class="titulo">
+                    <h3>Vidas ao Vento</h3>
+                </div>
+                <div class="nota">
+                    <form id="avaliar5">
+                        <label>Avalie o filme (0-10): <input type="number" id="nota5" min="1" max="10"></label>
+                        <button type="button" id="botao5" required>Enviar</button>
+                    </form>
+                    <br>
+                    <form>
+                        <button type="button" id="mediaBotao5">Clique aqui para saber a média das notas</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+        // filme 1
+
+        const notas = [];
+
+        const form = document.getElementById('avaliar');
+        const enviarBotao = form.querySelector('#botao[type="button"]');
+        const mediaBotao = document.querySelector('#mediaBotao');
+
+        enviarBotao.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const nota = parseInt(document.getElementById('nota').value);
+            notas.push(nota);
+
+            document.getElementById('nota').value = '';
+
+            alert('Nota atribuída com sucesso!');
+        });
+
+        mediaBotao.addEventListener('click', function () {
+            const totalNotas = notas.length;
+            const somaNotas = notas.reduce((total, nota) => total + nota, 0);
+            const media = somaNotas / totalNotas;
+
+            alert(`A média das notas atribuídas é: ${media.toFixed(1)}`);
+        });
+
+        // filme 2
+
+        const notas2 = [];
+
+        const form2 = document.getElementById('avaliar2');
+        const botao2 = form2.querySelector('#botao2[type="button"]');
+        const mediaBotao2 = document.querySelector('#mediaBotao2');
+
+        botao2.addEventListener('click', () => {
+            event.preventDefault();
+
+            const nota2 = parseInt(document.getElementById('nota2').value);
+            notas2.push(nota2);
+
+            document.getElementById('nota2').value = '';
+
+            alert('Nota atribuída com sucesso!');
+        });
+
+        mediaBotao2.addEventListener('click', function () {
+            const totalNotas2 = notas2.length;
+            const somaNotas2 = notas2.reduce((total, nota) => total + nota, 0);
+            const media2 = somaNotas2 / totalNotas2;
+
+            alert(`A média das notas atribuídas é: ${media2.toFixed(1)}`);
+        });
+
+        // filme 3
+
+        const notas3 = [];
+
+        const form3 = document.getElementById('avaliar3');
+        const botao3 = form3.querySelector('#botao3[type="button"]');
+        const mediaBotao3 = document.querySelector('#mediaBotao3');
+
+        botao3.addEventListener('click', () => {
+            const nota3 = parseInt(document.getElementById('nota3').value);
+            notas3.push(nota3);
+
+            document.getElementById('nota3').value = '';
+
+            alert('Nota atribuída com sucesso!');
+        });
+
+        mediaBotao3.addEventListener('click', function () {
+            const totalNotas3 = notas3.length;
+            const somaNotas3 = notas3.reduce((total, nota) => total + nota, 0);
+            const media3 = somaNotas3 / totalNotas3;
+
+            alert(`A média das notas atribuídas é: ${media3.toFixed(1)}`);
+        });
+
+        // filme 4
+
+        const notas4 = [];
+
+        const form4 = document.getElementById('avaliar4');
+        const botao4 = form4.querySelector('#botao4[type="button"]');
+        const mediaBotao4 = document.querySelector('#mediaBotao4');
+
+        botao4.addEventListener('click', () => {
+            const nota4 = parseInt(document.getElementById('nota4').value);
+            notas4.push(nota4);
+
+            document.getElementById('nota4').value = '';
+
+            alert('Nota atribuída com sucesso!');
+        });
+
+        mediaBotao4.addEventListener('click', function () {
+            const totalNotas4 = notas4.length;
+            const somaNotas4 = notas4.reduce((total, nota) => total + nota, 0);
+            const media4 = somaNotas4 / totalNotas4;
+
+            alert(`A média das notas atribuídas é: ${media4.toFixed(1)}`);
+        });
+
+        // filme 5
+
+        const notas5 = [];
+
+        const form5 = document.getElementById('avaliar5');
+        const botao5 = form5.querySelector('#botao5[type="button"]');
+        const mediaBotao5 = document.querySelector('#mediaBotao4');
+
+        botao5.addEventListener('click', () => {
+            const nota5 = parseInt(document.getElementById('nota5').value);
+            notas5.push(nota5);
+
+            document.getElementById('nota5').value = '';
+
+            alert('Nota atribuída com sucesso!');
+        });
+
+        mediaBotao5.addEventListener('click', function () {
+            const totalNotas5 = notas5.length;
+            const somaNotas5 = notas5.reduce((total, nota) => total + nota, 0);
+            const media5 = somaNotas5 / totalNotas5;
+
+            alert(`A média das notas atribuídas é: ${media5.toFixed(1)}`);
+        });
+
+    </script>
+
+</body>
+
+</html>

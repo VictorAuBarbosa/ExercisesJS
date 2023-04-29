@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+</head>
+
+<body>
+
+    <script>
+
+        let estoque = [];
+
+        while (true) {
+            let opcao = prompt("Selecione e digite uma opção \n1 - Adicionar um novo item \n2 - Remover um item \n3 - Exibir lista completa \n4 - Sair");
+
+            if (opcao === "1") {
+                let adicionaritem = prompt("Adicione um novo item");
+                estoque.push(adicionaritem);
+                alert(`O item "${adicionar item} " foi adicionado ao estoque.`);
+
+        } else if (opcao === "2") {
+            let removeritem = prompt("Digite o nome do item para remove-lo");
+            let removerindex = estoque.indexOf(removeritem);
+            if (removerindex !== -1) {
+                estoque.splice(removeritem, 1);
+                alert(`O item "${removeritem}" foi removido com sucesso`);
+            } else {
+                alert(`O item "${removeritem}" não foi localizado no estoque`);
+            }
+
+        }
+
+        else if (opcao === "3") {
+            let listaitem = "";
+            estoque.forEach(function (item) {
+                listaitem += item + "\n";
+            });
+            alert(`Item disponíveis no momento: \n${listaitem}`)
+
+        } else if (opcao === "4") {
+            alert("Programa encerrado");
+            break;
+
+        } else {
+            alert("opção inválida. Tente novamente")
+        }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
